@@ -2212,6 +2212,7 @@ This allows using a different mpirun command to launch unit tests
       <env name="OMP_STACKSIZE">64M</env>
       <!-- The following is needed in order to run qsub from the compute nodes -->
       <env name="PATH">$ENV{PATH}:/cluster/torque/bin</env>
+      <env name="LD_LIBRARY_PATH">$ENV{LD_LIBRARY_PATH}:/project/amp/jet/install_izumi/spack/opt/spack/linux-almalinux8-skylake_avx512/gcc-9.3.0/kokkos-3.0.00-f6s53cvwkjph5gbxt7cadkq4psqnph22/lib64</env>
     </environment_variables>
     <environment_variables compiler="intel">
       <env name="PIO">/home/jedwards/pio/2.5.7/intel</env>
