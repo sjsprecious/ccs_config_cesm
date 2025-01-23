@@ -484,7 +484,7 @@ This allows using a different mpirun command to launch unit tests
         <command name="load">netcdf-mpi/4.9.2</command>
         <command name="load">parallel-netcdf/1.14.0</command>
       </modules>
-      <modules DEBUG="FALSE">
+      <modules>
         <command name="load">parallelio/2.6.3</command>
       </modules>
     </module_system>
