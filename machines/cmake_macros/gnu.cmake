@@ -6,7 +6,7 @@ if (compile_threaded)
 endif()
 if (DEBUG)
   string(APPEND CFLAGS " -g -Wall -Og -fbacktrace -ffpe-trap=invalid,zero,overflow -fcheck=bounds")
-  string(APPEND CXXFLAGS " -g -Wall -Og -fsanitize=address -fno-omit-frame-pointer -fnon-call-exceptions -fcheck=bounds -ftrapv")
+  string(APPEND CXXFLAGS " -g -Wall -Og -fno-omit-frame-pointer -fnon-call-exceptions -fcheck=bounds -ftrapv") # -fsanitize=address flag is helpful but causes a linker error with Fortran compiler
 endif()
 if (NOT DEBUG)
   string(APPEND CFLAGS " -O")
