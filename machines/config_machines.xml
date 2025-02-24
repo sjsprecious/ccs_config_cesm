@@ -468,7 +468,6 @@ This allows using a different mpirun command to launch unit tests
       </modules>
       <modules compiler="nvhpc">
         <command name="load">nvhpc/24.11</command>
-        <command name="load">kokkos</command>
       </modules>
       <modules>
 	      <command name="load">ncarcompilers/1.0.0</command>
