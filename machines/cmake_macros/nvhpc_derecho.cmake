@@ -1,0 +1,8 @@
+if (COMP_NAME STREQUAL mpi-serial)
+   string(APPEND CFLAGS " -std=c89 ")
+   string(APPEND CXXFLAGS " -std=c89 ")
+endif()
+if (NOT DEBUG)
+  string(APPEND FFLAGS " -tp=zen3")
+  string(APPEND CXXFLAGS " -tp=zen3")
+endif()
