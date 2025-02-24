@@ -409,7 +409,7 @@ This allows using a different mpirun command to launch unit tests
   <machine MACH="derecho">
     <DESC>NCAR AMD EPYC system</DESC>
     <OS>CNL</OS>
-    <COMPILERS>intel,gnu</COMPILERS>
+    <COMPILERS>intel,gnu,nvhpc</COMPILERS>
     <MPILIBS>mpich</MPILIBS>
     <CIME_OUTPUT_ROOT>$ENV{SCRATCH}</CIME_OUTPUT_ROOT>
     <DIN_LOC_ROOT>/glade/derecho/scratch/$ENV{USER}/inputdata</DIN_LOC_ROOT>
