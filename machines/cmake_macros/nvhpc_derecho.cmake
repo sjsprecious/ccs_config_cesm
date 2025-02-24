@@ -14,6 +14,7 @@ set(SCXX "nvc++")
 set(SFC "nvfortran")
 
 string(APPEND LDFLAGS " -lstdc++ ")
+string(APPEND SLIBS " -llapack -lblas")
 
 if (USE_KOKKOS)
   set(EKAT_MACH_FILES_PATH ${SRC_ROOT}/libraries/ekat/cmake/machine-files)
