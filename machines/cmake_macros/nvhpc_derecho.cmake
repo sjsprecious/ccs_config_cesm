@@ -8,7 +8,7 @@ if (COMP_NAME STREQUAL mpi-serial)
    string(APPEND CXXFLAGS " -std=c89 ")
 endif()
 if (NOT DEBUG)
-  string(APPEND FFLAGS " -tp=zen3")
+  string(APPEND FFLAGS " -tp=zen3 -DHAVE_IEEE_ARITHMETIC -Mallocatable=03 -DNO_R16 -traceback")
   string(APPEND CXXFLAGS " -tp=zen3")
 endif()
 
