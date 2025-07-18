@@ -74,7 +74,6 @@ This allows using a different mpirun command to launch unit tests
     <value MACH="theta">theta.*</value>
     <value MACH="thunder">.*.thunder.ucar.edu</value>
     <value MACH="ubuntu-latest">$ENV{CIME_TEST_PLATFORM}:ubuntu-latest</value>
-    <value MACH="cirrus">$ENV{CIME_TEST_PLATFORM}</value>
     <value MACH="vista">.*\.vista.tacc.utexas.edu</value>
     <value MACH="zeus">(login[1,2]-ib|n[0-9][0-9][0-9]-ib)</value>
   </NODENAME_REGEX>    
