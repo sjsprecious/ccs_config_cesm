@@ -1,7 +1,7 @@
 <machine MACH="cirrus">
     <DESC>NCAR AMD EPYC 9354P (CPU nodes) and NVIDIA A10/A2 (GPU nodes) cloud service </DESC>
     <OS>LINUX</OS>
-    <COMPILERS>gnu</COMPILERS>
+    <COMPILERS>gnu,intel,nvhpc</COMPILERS>
     <MPILIBS>openmpi</MPILIBS>
     <CIME_OUTPUT_ROOT>/tmp</CIME_OUTPUT_ROOT>
     <DIN_LOC_ROOT>/glade/inputdata</DIN_LOC_ROOT>
