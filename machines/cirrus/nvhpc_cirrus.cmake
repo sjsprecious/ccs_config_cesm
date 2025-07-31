@@ -1,9 +1,7 @@
-set(MPICC "mpicc")
-set(MPICXX "mpicxx")
-set(MPIFC "mpif90")
-set(SCC "gcc")
-set(SCXX "g++")
-set(SFC "gfortran")
+string(APPEND CPPDEFS " -DHAVE_IEEE_ARITHMETIC")
+string(APPEND FFLAGS " -tp=zen4 -Mstack_arrays -Mallocatable=03")
+string(APPEND CXXFLAGS " -tp=zen4")
+string(APPEND LDFLAGS " -tp=zen4 -Mnofma")
 
 if (USE_KOKKOS)
   # Generic setting that are used regardless of Architecture or Kokkos backend
@@ -16,16 +14,8 @@ if (USE_KOKKOS)
     string(APPEND SLIBS " -L${CUDA_PATH}/lib64 -lcudart -lcublas -L${CUDA_PATH}/lib64/stubs -lcuda")
   else()
     # Enable EPYC arch in kokkos
-    if (compile_threaded)
-      # Settings used when OpenMP is the Kokkos backend
-      string(APPEND KOKKOS_OPTIONS " -DKokkos_ARCH_ZEN4=ON -DKokkos_ENABLE_AGGRESSIVE_VECTORIZATION=ON -DKokkos_ENABLE_SERIAL=OFF -DKokkos_ENABLE_OPENMP=ON")
-    else()
-      string(APPEND KOKKOS_OPTIONS " -DKokkos_ARCH_ZEN4=ON -DKokkos_ENABLE_SERIAL=ON -DKokkos_ENABLE_OPENMP=OFF")
-    endif()
-    string(APPEND CXXFLAGS " -march=znver4 -mtune=znver4")
-  endif()
-  if (CMAKE_Fortran_COMPILER_VERSION VERSION_GREATER_EQUAL 10)
-    set(CMAKE_Fortran_FLAGS "-fallow-argument-mismatch"  CACHE STRING "" FORCE) # only works with gnu v10 and above
+    string(APPEND KOKKOS_OPTIONS " -DKokkos_ARCH_ZEN3=ON -DKokkos_ENABLE_SERIAL=ON -DKokkos_ENABLE_OPENMP=OFF") # work-around for nvidia as kokkos is not passing "-mp" for threaded build
   endif()
   string(APPEND LDFLAGS " -lstdc++ -lkokkoscontainers -lkokkoscore -lkokkossimd ")
+  string(APPEND SLIBS " -lsci_nvidia ")
 endif()
