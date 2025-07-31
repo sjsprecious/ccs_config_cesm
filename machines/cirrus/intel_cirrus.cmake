@@ -1,12 +1,12 @@
-string(APPEND CFLAGS " -qopt-report -march=core-avx2")
-string(APPEND CXXFLAGS " -qopt-report -march=core-avx2")
-string(APPEND FFLAGS " -qopt-report -march=core-avx2")
 set(SCC icx)
 set(SCXX icpx)
 set(SFC ifort)
 set(MPICC "mpicc")
 set(MPICXX "mpicxx")
 set(MPIFC "mpif90")
+string(APPEND CFLAGS " -qopt-report -march=core-avx2")
+string(APPEND CXXFLAGS " -qopt-report -march=core-avx2")
+string(APPEND FFLAGS " -qopt-report -march=core-avx2")
 
 if (USE_KOKKOS)
   # Generic setting that are used regardless of Architecture or Kokkos backend

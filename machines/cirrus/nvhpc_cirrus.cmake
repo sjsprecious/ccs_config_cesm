@@ -1,3 +1,10 @@
+set(MPICC "mpicc")
+set(MPICXX "mpicxx")
+set(MPIFC "mpif90")
+set(SCC "nvc")
+set(SCXX "nvc++")
+set(SFC "nvfortran")
+
 string(APPEND CPPDEFS " -DHAVE_IEEE_ARITHMETIC")
 string(APPEND FFLAGS " -tp=zen4 -Mstack_arrays -Mallocatable=03")
 string(APPEND CXXFLAGS " -tp=zen4")
