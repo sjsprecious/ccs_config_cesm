@@ -17,7 +17,7 @@
     <MAX_MEM_PER_NODE>128</MAX_MEM_PER_NODE> <!-- this may vary depending on your CIRRUS runner configuration --> 
     <MAX_GPUS_PER_NODE>1</MAX_GPUS_PER_NODE>
     <MAX_MPITASKS_PER_NODE>32</MAX_MPITASKS_PER_NODE> <!-- this may vary depending on your CIRRUS runner configuration -->
-    <MAX_CPUTASKS_PER_GPU_NODE>1</MAX_CPUTASKS_PER_GPU_NODE>
+    <MAX_CPUTASKS_PER_GPU_NODE>32</MAX_CPUTASKS_PER_GPU_NODE>
     <PROJECT_REQUIRED>FALSE</PROJECT_REQUIRED>
     <mpirun mpilib="openmpi">
       <executable>mpiexec</executable>
