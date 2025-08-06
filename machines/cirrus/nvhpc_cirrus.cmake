@@ -23,8 +23,6 @@ if (USE_KOKKOS)
     else()
       string(APPEND SLIBS " -L${CUDA_PATH}/lib64 -lcudart -lcublas -L${CUDA_PATH}/lib64/stubs -lcuda")
     endif()
-
-    string(APPEND SLIBS " -L${CUDA_PATH}/lib64 -lcudart -lcublas -L${CUDA_PATH}/lib64/stubs -lcuda")
   else()
     # Enable EPYC arch in kokkos
     string(APPEND KOKKOS_OPTIONS " -DKokkos_ARCH_ZEN4=ON -DKokkos_ENABLE_SERIAL=ON -DKokkos_ENABLE_OPENMP=OFF") # work-around for nvidia as kokkos is not passing "-mp" for threaded build
